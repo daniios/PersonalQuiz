@@ -16,7 +16,9 @@ final class ResultViewController: UIViewController {
     
     // MARK: - Properties
     var answers: [Answer] = []
-    var yourAnimal: Animal? { findMostFrequentAnimal(in: answers) }
+    private var yourAnimal: Animal? {
+        findMostFrequentAnimal()
+    }
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -37,7 +39,7 @@ final class ResultViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    private func findMostFrequentAnimal(in answers: [Answer]) -> Animal? {
+    private func findMostFrequentAnimal() -> Animal? {
         var animalCounts: [Animal: Int] = [:]
         var maxCount = 0
         var mostFrequentAnimal: Animal?
