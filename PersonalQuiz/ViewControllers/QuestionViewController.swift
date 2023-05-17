@@ -3,6 +3,7 @@
 //  PersonalQuiz
 //
 //  Created by Vasichko Anna on 11.05.2023.
+//  Modified by Chupin Daniil on 17.05.2023.
 //
 
 import UIKit
@@ -42,7 +43,12 @@ final class QuestionViewController: UIViewController {
         rangedSlider.maximumValue = answerCount
         rangedSlider.value = answerCount / 2
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultVC = segue.destination as? ResultViewController
+        else { return }
+        resultVC.answers = answersChosen
+    }
 
     // MARK: - IBActions
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {

@@ -3,6 +3,7 @@
 //  PersonalQuiz
 //
 //  Created by Vasichko Anna on 11.05.2023.
+//  Modified by Chupin Daniil on 17.05.2023.
 //
 
 struct Question {
@@ -13,7 +14,7 @@ struct Question {
     static func getQuestions() -> [Question] {
         [
         Question(
-            title: "Какую пищу вы предпочитает?",
+            title: "Какую пищу вы предпочитаете?",
             responseType: .single,
             answers: [
                 Answer(title: "Стейк", animal: .dog),
